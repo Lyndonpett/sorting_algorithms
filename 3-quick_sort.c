@@ -1,9 +1,10 @@
 #include "sort.h"
 
 /**
- * @brief
+ * quick_sort - sorts an array from low to high.
  *
- *
+ * @array: the array.
+ * @size: the size of the array.
  *
  */
 
@@ -16,10 +17,14 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * @brief
+ * sort - using recursion to sort from low to high.
  *
+ * @array: the array.
+ * @low: the beginning of the sort.
+ * @high: the end point of the sort.
+ * @size: the size of the array.
  *
- *
+ * Return: void.
  */
 
 void sort(int *array, int low, int high, size_t size)
@@ -35,13 +40,14 @@ void sort(int *array, int low, int high, size_t size)
 	}
 }
 /**
- * @brief
+ * partition - finds the pivotINDEX of an array.
  *
- * @param array
- * @param low
- * @param high
- * @param size
- * @return int
+ * @array: the array.
+ * @low: the beginning of the sort.
+ * @high: the end point of the sort.
+ * @size: the size of the array.
+ *
+ * Return: our new pivot index.
  */
 
 int partition(int *array, int low, int high, size_t size)
@@ -72,8 +78,11 @@ int partition(int *array, int low, int high, size_t size)
 }
 
 /**
- * @brief
+ * swapArray - swaps two elements in an array.
  *
+ * @array: the array.
+ * @first: the first element.
+ * @second: the second element.
  *
  */
 
