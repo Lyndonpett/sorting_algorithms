@@ -17,17 +17,17 @@ void selection_sort(int *array, size_t size)
 	{
 		return;
 	}
-
+	/* handles looping through the array */
 	for (step = 0; step < size - 1; step++)
-	{
+	{ /* set our min to the num found */
 		min_idx = step;
 		for (i = step + 1; i < size; i++)
-		{
+		{ /* if size of i is smaller than index, set min to equal i */
 			if (array[i] < array[min_idx])
 			{
 				min_idx = i;
 			}
-		}
+		} /* as long as the two values !=, then swap and print */
 		if (min_idx != step)
 		{
 			swap(&array[min_idx], &array[step]);
