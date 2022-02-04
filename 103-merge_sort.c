@@ -93,7 +93,7 @@ void merge(size_t low, size_t mid, size_t high, int *array, int *aux)
  */
 void realMergeSort(int *array, int *aux, size_t low, size_t high)
 {	/* initialize mid */
-	size_t mid = 0;
+	size_t mid = 0, i = low;
 
 	/* make sure high - low < 2 */
 	if (high - low < 2)
@@ -113,6 +113,6 @@ void realMergeSort(int *array, int *aux, size_t low, size_t high)
 	merge(low, mid, high, array, aux);
 
 	/* copy back to the original array to reflect sorted order */
-	for (mid = low; mid < high; mid++)
-		aux[mid] = array[mid];
+	for (i = low; i < high; i++)
+		aux[i] = array[i];
 }
