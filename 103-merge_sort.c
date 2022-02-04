@@ -39,7 +39,7 @@ void merge_sort(int *array, size_t size)
 }
 
 /**
- * merge - merges the array and aux
+ * merge - merges the two halves
  *
  * @low: lowest index
  * @mid: mid index
@@ -48,7 +48,7 @@ void merge_sort(int *array, size_t size)
  * @aux: copied array
  *
  */
-void merge(size_t low, size_t mid, size_t high, int *array, int *aux)
+void merge( int *array, int *aux, size_t low, size_t mid, size_t high)
 { /* initialize variables and set to low and mid */
 	size_t i = low, j = mid, k = low;
 
@@ -83,7 +83,8 @@ void merge(size_t low, size_t mid, size_t high, int *array, int *aux)
 }
 
 /**
- * realMergeSort - A function that splits the array recursively
+ * realMergeSort - recursively calls itself to
+ * divide the array till size becomes one
  *
  * @low: lowest index
  * @high: highest index
@@ -95,7 +96,7 @@ void realMergeSort(int *array, int *aux, size_t low, size_t high)
 {	/* initialize mid */
 	size_t mid = 0, i = low;
 
-	/* make sure high - low < 2 */
+	/* check high - low < 2 to makes sure low(left) < high(right)  */
 	if (high - low < 2)
 	{
 		return;
@@ -110,9 +111,12 @@ void realMergeSort(int *array, int *aux, size_t low, size_t high)
 	realMergeSort(array, aux, mid, high);
 
 	/* merge the two half runs */
-	merge(low, mid, high, array, aux);
+	merge(array, aux, low, mid, high);
 
 	/* copy back to the original array to reflect sorted order */
-	for (i = low; i < high; i++)
+	while (i < high)
+	{
 		aux[i] = array[i];
+		i++;
+	}
 }
