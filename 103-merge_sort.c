@@ -26,7 +26,7 @@ void merge_sort(int *array, size_t size)
 	}
 
 	/* copy the array into aux */
-	while(i < size)
+	while (i < size)
 	{
 		aux[i] = array[i];
 		i++;
