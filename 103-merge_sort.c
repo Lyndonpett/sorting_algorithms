@@ -48,7 +48,7 @@ void merge_sort(int *array, size_t size)
  * @aux: copied array
  *
  */
-void merge( int *array, int *aux, size_t low, size_t mid, size_t high)
+void merge(int *array, int *aux, size_t low, size_t mid, size_t high)
 { /* initialize variables and set to low and mid */
 	size_t i = low, j = mid, k = low;
 
