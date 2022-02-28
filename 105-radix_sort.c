@@ -25,8 +25,13 @@ int getMax(int *array, size_t size)
 }
 
 /**
- * @brief
+ * countSort - sorts array using countsort
  *
+ * @array: the array
+ * @size: the size of the array
+ * @exp: digital position value
+ * @tmp: tmp array
+ * @countArray: count array
  *
  */
 
